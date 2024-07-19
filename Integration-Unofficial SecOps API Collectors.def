@@ -1,0 +1,53 @@
+{
+  "IsAvailableForCommunity": false,
+  "Identifier": "Unofficial SecOps API Collectors",
+  "ShouldInstalledInSystem": false,
+  "Version": 18.0,
+  "DisplayName": "Unofficial SecOps API Collectors",
+  "Description": "",
+  "ImageBase64": null,
+  "SvgImage": null,
+  "IsCustom": true,
+  "PythonVersion": 2,
+  "IntegrationProperties": [
+    {
+      "IntegrationIdentifier": "Unofficial SecOps API Collectors",
+      "PropertyName": "SecOps Ingestion API v2 JSON",
+      "PropertyDescription": "JSON credential for your Google SecOps tenant",
+      "PropertyDisplayName": "SecOps Ingestion API v2 JSON",
+      "PropertyType": 3,
+      "IsMandatory": true,
+      "Value": null,
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1717117640720,
+      "ModificationTimeUnixTimeInMs": 1717117640720
+    },
+    {
+      "IntegrationIdentifier": "Unofficial SecOps API Collectors",
+      "PropertyName": "Google SecOps Customer ID",
+      "PropertyDescription": "Your Google SecOps/Chronicle customer ID. ",
+      "PropertyDisplayName": "Google SecOps Customer ID",
+      "PropertyType": 2,
+      "IsMandatory": true,
+      "Value": "aaaaaaa-bbbbbb-ccccccc-ddddddd",
+      "Id": 0,
+      "CreationTimeUnixTimeInMs": 1717117640720,
+      "ModificationTimeUnixTimeInMs": 1717117640720
+    }
+  ],
+  "IntegrationSupportedActions": [],
+  "Categories": [],
+  "HasConnectors": false,
+  "DocumentationLink": null,
+  "IsCertified": false,
+  "UploaderFullName": "Mike Wilusz",
+  "PublishComment": null,
+  "UploaderEmail": "mike.wilusz@argolis.aileronapps.com",
+  "UploaderImageBase64": "",
+  "UploaderProfileLink": null,
+  "MinimumSystemVersion": 0.0,
+  "ProductionIntegrationIdentifier": null,
+  "Id": 0,
+  "CreationTimeUnixTimeInMs": 1717117640720,
+  "ModificationTimeUnixTimeInMs": 1717242396159
+}
