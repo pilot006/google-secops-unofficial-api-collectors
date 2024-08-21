@@ -2,39 +2,14 @@
   "IsAvailableForCommunity": false,
   "Identifier": "Unofficial SecOps API Collectors",
   "ShouldInstalledInSystem": false,
-  "Version": 18.0,
+  "Version": 21.0,
   "DisplayName": "Unofficial SecOps API Collectors",
   "Description": "",
   "ImageBase64": null,
-  "SvgImage": null,
+  "SvgImage": "<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\"><!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools --><svg fill=\"#17e5e8\" width=\"800px\" height=\"800px\" viewBox=\"0 0 52 52\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"#17e5e8\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"/><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><g id=\"SVGRepo_iconCarrier\"><path d=\"M44.5,21a5.5,5.5,0,1,1-4.9,8h-.91c-5.39.06-7.29,1.7-10.31,7.34l-.17.33-.2.38c-1.8,3.37-2.82,4.9-4.66,6.52C20.76,45.84,17.42,47,13,47h-.6a5.5,5.5,0,1,1,0-5h.91c5.49-.06,7.36-1.76,10.48-7.67h0L24,34a27.18,27.18,0,0,1,3.11-5H12.4a5.5,5.5,0,1,1,0-5H39.6a5.53,5.53,0,0,1,4.68-3Zm0-19a5.5,5.5,0,1,1-4.9,8H12.4a5.5,5.5,0,1,1,0-5H39.6A5.5,5.5,0,0,1,44.5,2Z\"/></g></svg>",
   "IsCustom": true,
-  "PythonVersion": 2,
-  "IntegrationProperties": [
-    {
-      "IntegrationIdentifier": "Unofficial SecOps API Collectors",
-      "PropertyName": "SecOps Ingestion API v2 JSON",
-      "PropertyDescription": "JSON credential for your Google SecOps tenant",
-      "PropertyDisplayName": "SecOps Ingestion API v2 JSON",
-      "PropertyType": 3,
-      "IsMandatory": true,
-      "Value": null,
-      "Id": 0,
-      "CreationTimeUnixTimeInMs": 1717117640720,
-      "ModificationTimeUnixTimeInMs": 1717117640720
-    },
-    {
-      "IntegrationIdentifier": "Unofficial SecOps API Collectors",
-      "PropertyName": "Google SecOps Customer ID",
-      "PropertyDescription": "Your Google SecOps/Chronicle customer ID. ",
-      "PropertyDisplayName": "Google SecOps Customer ID",
-      "PropertyType": 2,
-      "IsMandatory": true,
-      "Value": "aaaaaaa-bbbbbb-ccccccc-ddddddd",
-      "Id": 0,
-      "CreationTimeUnixTimeInMs": 1717117640720,
-      "ModificationTimeUnixTimeInMs": 1717117640720
-    }
-  ],
+  "PythonVersion": 3,
+  "IntegrationProperties": [],
   "IntegrationSupportedActions": [],
   "Categories": [],
   "HasConnectors": false,
@@ -48,6 +23,6 @@
   "MinimumSystemVersion": 0.0,
   "ProductionIntegrationIdentifier": null,
   "Id": 0,
-  "CreationTimeUnixTimeInMs": 1717117640720,
-  "ModificationTimeUnixTimeInMs": 1717242396159
+  "CreationTimeUnixTimeInMs": 1724240764159,
+  "ModificationTimeUnixTimeInMs": 1724240764159
 }

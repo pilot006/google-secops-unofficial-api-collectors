@@ -15,7 +15,7 @@ siemplify = SiemplifyJob()
 siemplify.script_name = SCRIPT_NAME
 
 # INIT INTEGRATION CONFIGURATION:
-BEARER = siemplify.extract_job_param(param_name="1Password Bearer Token", print_value=True)
+BEARER = siemplify.extract_job_param(param_name="1Password Bearer Token", print_value=False)
 API_URL = siemplify.extract_job_param(param_name="1Password Base URL", print_value=True)
 TIME_INTERVAL = siemplify.extract_job_param(param_name="Job interval (minutes)", print_value=True)
 INGESTION_SA_JSON = siemplify.extract_job_param(param_name="SecOps Ingestion API v2 JSON", print_value=False)
@@ -29,10 +29,6 @@ log_batch = []
 def main():
 
     try:
-
-        d = datetime.now() - timedelta(hours=0, minutes=int(TIME_INTERVAL))
-        d = d.strftime('%Y-%m-%dT%H:%M:00.0Z')
-        siemplify.LOGGER.info("Current zulu time: " + d)
         
         cursor = None
         cursor = get_onepassword_events(cursor)
@@ -63,10 +59,18 @@ def get_onepassword_events(cursor):
         "Authorization":  "Bearer " + BEARER
     }
 
+    d = datetime.now() - timedelta(hours=0, minutes=int(TIME_INTERVAL))
+    start_time = d.strftime('%Y-%m-%dT%H:%M:00.0Z')
+    e = datetime.now() - timedelta(hours=0, minutes=1)
+    end_time = e.strftime('%Y-%m-%dT%H:%M:59.99999Z')
+    siemplify.LOGGER.info("start_time: " + start_time)
+    siemplify.LOGGER.info("end_time: " + end_time)
+
     if cursor == None:
         payload = {
-            "limit": 100,
-            "start_time": "2023-03-15T16:32:50-03:00"
+            "limit": 1000,
+            "start_time": start_time,
+            "end_time" : end_time
         }
     else:
         payload = {
