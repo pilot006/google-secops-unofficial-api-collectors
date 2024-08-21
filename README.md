@@ -14,3 +14,4 @@ Unofficial set of "jobs" for Google SecOps that allows you to collect events fro
 | ------------- | ------------- | ------------- |
 | ADSBFI Live Aircraft Feed | Collects ADS-B flight data around a geographic point using ADSB.FI free API | [Link](https://github.com/adsbfi/opendata/blob/main/README.md) |
 | Okta - Events | Collects Okta events | [Link](https://developer.okta.com/docs/reference/api/system-log/) |
+| 1Password - Audit Events | Collects audit events from 1Password | [Link](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents) |
