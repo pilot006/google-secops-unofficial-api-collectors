@@ -2,7 +2,7 @@
 Unofficial set of "jobs" for Google SecOps that allows you to collect events from 3rd-party APIs that aren't directly supported by SecOps's Feed Managment. These are mean to serve as a reference for collecting data from 3rd-party APIs and batch ingest those events in SecOps.
 
 
-## Common Configuration (for all jobs)
+## Common Configuration (for all jobs/connectors)
 | Parameter  | Description |
 | ------------- | ------------- |
 | SecOps Ingestion API v2 JSON | Ingestion API credential. Available from your Google/SecOps partner team or via the interface under `SIEM Settings` -> `Collection Agents` -> `Ingestion Authentication File` |
