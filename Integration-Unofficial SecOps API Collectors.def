@@ -2,7 +2,7 @@
   "IsAvailableForCommunity": false,
   "Identifier": "Unofficial SecOps API Collectors",
   "ShouldInstalledInSystem": false,
-  "Version": 21.0,
+  "Version": 31.0,
   "DisplayName": "Unofficial SecOps API Collectors",
   "Description": "",
   "ImageBase64": null,
@@ -24,5 +24,5 @@
   "ProductionIntegrationIdentifier": null,
   "Id": 0,
   "CreationTimeUnixTimeInMs": 1724240764159,
-  "ModificationTimeUnixTimeInMs": 1724240764159
+  "ModificationTimeUnixTimeInMs": 1725976536192
 }
