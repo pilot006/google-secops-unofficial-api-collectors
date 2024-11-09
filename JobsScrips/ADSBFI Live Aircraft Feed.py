@@ -26,7 +26,7 @@ def main():
     try:
         headers = {
             "Accept":         "application/json",
-            "Content-Type":   "applicaiton/json"
+            "Content-Type":   "application/json"
         }
         
         # https://github.com/adsbfi/opendata/blob/main/README.md

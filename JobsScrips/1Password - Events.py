@@ -23,7 +23,7 @@ INGESTION_SA_JSON = json.loads(INGESTION_SA_JSON)
 CUSTOMER_ID = siemplify.extract_job_param(param_name="SecOps Customer ID", print_value=False)
 
 # Log types: https://cloud.google.com/chronicle/docs/ingestion/parser-list/supported-default-parsers
-LOG_TYPE = "ONEPASSOWRD"
+LOG_TYPE = "ONEPASSWORD"
 log_batch = []
 
 def main():
