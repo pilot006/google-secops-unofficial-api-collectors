@@ -37,7 +37,9 @@ class secops():
             scopes=['https://www.googleapis.com/auth/cloud-platform']
         )
         request = google.auth.transport.requests.Request()
+        print("[DEBUG] Before refresh")
         credentials.refresh(request)
+        print(credentials.token)
         hd = {
             "Authorization": "Bearer " + credentials.token,
             "Content-Type": "application/json"
