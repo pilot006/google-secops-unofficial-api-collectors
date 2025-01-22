@@ -24,3 +24,4 @@ Unofficial set of "jobs" for Google SecOps that allows you to collect events fro
 | Okta - Events | Collects Okta events | [Link](https://developer.okta.com/docs/reference/api/system-log/) |
 | 1Password - Audit Events | Collects audit events from 1Password | [Link](https://developer.1password.com/docs/events-api/reference/#post-apiv1auditevents) |
 | Google SecOps/Chronicle SOAR | Collects the SOAR audit logs | [Link](https://cloud.google.com/chronicle/docs/soar/reference/working-with-chronicle-soar-apis) |
+| Google SecOps/Chronicle SIEM Parser Errors | Collects parser errors for specified log types | [Link](https://cloud.google.com/chronicle/docs/administration/cli-user-guide#parser_management_user_workflows) |
