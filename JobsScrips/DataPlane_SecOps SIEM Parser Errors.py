@@ -28,7 +28,7 @@ log_batch = []
 
 def main():
 
-    # Generate required dates for use in APInow_utc = datetime.utcnow()
+    # Generate required dates for use in API
     now_utc = datetime.utcnow()
     end_time = now_utc.strftime("%Y-%m-%dT%H:%M:%S") + "Z"
     start_time = now_utc - timedelta(minutes=int(JOB_INTERVAL))
@@ -42,9 +42,11 @@ def main():
             endpoint = f"https://backstory.googleapis.com/v1/tools/cbnParsers:listCbnParserErrors?log_type={log}&start_time={start_time}&end_time={end_time}"
             siemplify.LOGGER.info(f"Using API endpoint: {endpoint}")
             err = get_parser_errors(endpoint)
+            # Only process if we see errors in the response
             if 'errors' in err:
                 for i in err['errors']:
                     c_index = 0
+                    # The logs are base64 encoded so we'll decode them before shipping
                     for c in i['logs']:
                         c = base64.b64decode(c).decode('utf-8')
                         i['logs'][c_index] = c
@@ -85,29 +87,16 @@ def get_parser_errors(api_endpoint):
     return(req.json())
 
 def batch_logs(log_line):
+    siemplify.LOGGER.info("log_line received by batch_logs(): " + json.dumps(log_line))
     batch_size = len(json.dumps(log_batch).encode())
     siemplify.LOGGER.info('Batch size: ' + str(batch_size))
     # Batch size is limited to 1 MB: https://cloud.google.com/chronicle/docs/reference/ingestion-api#unstructuredlogentries
     if batch_size < 800000:
-        # Convert JSON object to string
-        json_str = json.dumps(log_line)
-        # Encode the JSON string to bytes
-        json_bytes = json_str.encode('utf-8')
-        # Encode the bytes to base64
-        base64_bytes = base64.b64encode(json_bytes)
-        # Convert base64 bytes to string
-        base64_str = base64_bytes.decode('utf-8')
+        base64_str = base64.urlsafe_b64encode(json.dumps(log_line).encode()).decode()
         entry = { "data": base64_str }
         log_batch.append(entry)
     else:
-        # Convert JSON object to string
-        json_str = json.dumps(log_line)
-        # Encode the JSON string to bytes
-        json_bytes = json_str.encode('utf-8')
-        # Encode the bytes to base64
-        base64_bytes = base64.b64encode(json_bytes)
-        # Convert base64 bytes to string
-        base64_str = base64_bytes.decode('utf-8')
+        base64_str = base64.urlsafe_b64encode(json.dumps(log_line).encode()).decode()
         entry = { "data": base64_str }
         log_batch.append(entry)
         siemplify.LOGGER.info("Batch full. Sending to Google SecOps.")
@@ -119,6 +108,7 @@ def batch_logs(log_line):
                                             )
         siemplify.LOGGER.info('SecOps API response: ' + c)
         log_batch.clear()
+
 
 if __name__ == "__main__":
     main()
